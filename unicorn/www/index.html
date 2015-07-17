@@ -35,6 +35,32 @@
     <ion-content padding="true">
       <h2>Using the app</h2>
       <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Facilis architecto hic officia quasi excepturi sequi deleniti maiores consectetur veritatis sint?</p>
+
+
+
+        <div ng-controller="musicController">
+          Mi piace la musica {{genere}}
+
+          <input ng-change="changeGenere()" ng-model="nuovoGenere">
+
+          <b>Generi:</b>
+          <ul class="list">
+            <li ng-repeat="genereM in generi" class="item item-button-right">
+              {{genereM.name}}
+
+              <button class="button button-positive" ng-click="rimuoviGenere($index)">
+                X
+              </button>
+
+            </li>
+          </ul>
+
+          Aggiungi un genere: <input  ng-model="genereAggiunto"> - ce ne sono {{totGeneri}}
+          <button ng-click="addGenere()">+</button>
+        </div>
+
+
+
     </ion-content>
   </ion-view>
 </script>
